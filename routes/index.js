@@ -19,4 +19,25 @@ indexRouter.get('/', (req, res) => {
   res.end();
 });
 
-module.exports = indexRouter;
+module.exports = {
+  router: indexRouter,
+  messages,
+  addMessage: (text, user) => {
+    messages.push({
+      text,
+      user,
+      added: new Date(),
+    });
+  },
+};
+
+// Alternative Method 2 (using exports directly):
+// exports.router = indexRouter;
+// exports.messages = messages;
+// exports.addMessage = (text, user) => {
+//   messages.push({
+//     text,
+//     user,
+//     added: new Date()
+//   });
+// };
