@@ -4,18 +4,18 @@ const indexRouter = Router();
 const messages = [
   {
     text: 'Hi there!',
-    user: 'Amando',
+    user: 'Manga',
     added: new Date(),
   },
   {
     text: 'Hello World!',
-    user: 'Charles',
+    user: 'Fathy',
     added: new Date(),
   },
 ];
 
 indexRouter.get('/', (req, res) => {
-  res.send('Hello world');
+  res.render('index', { title: 'Mini Message Board', messages: messages });
   res.end();
 });
 
