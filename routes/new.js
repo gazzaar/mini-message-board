@@ -9,6 +9,11 @@ newMessageRouter.get('/', (req, res) => {
 newMessageRouter.post('/', (req, res) => {
   let messageText = req.body.newMessage;
   let authorName = req.body.authorName;
+  if (!messageText || !authorName) {
+    res.status(400).send('Message and author name are required');
+    res.end();
+    return;
+  }
   addMessage(messageText, authorName);
   res.redirect('/');
   res.end();
