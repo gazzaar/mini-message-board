@@ -1,2 +1,3 @@
-# mini-message-board
-Message board
+# MINI MESSAGE BOARD
+
+- A small backend app using expressJS
